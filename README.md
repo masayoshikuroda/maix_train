@@ -11,7 +11,7 @@ $ docker build . -t maix_train
 ## Run container
 ```
 $ mkdir out
-$ docker run -it --rm -v out:/root/maix_train/out maix_train
+$ docker run -it --rm -v ${PWD}out:/root/maix_train/out maix_train
 ```
 
 ## Train
