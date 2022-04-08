@@ -24,4 +24,5 @@ RUN tar Jxfv ncc-linux-x86_64.tar.xz
 RUN rm ncc-linux-x86_64.tar.xz
 
 WORKDIR /root/maix_train
+COPY __init__.py train/
 RUN python3 train.py init
