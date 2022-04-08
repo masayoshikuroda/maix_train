@@ -83,10 +83,11 @@ class Train():
     def clean_temp_files(self):
         if os.path.exists(self.temp_dir):
             for f in os.listdir(self.temp_dir):
-                if os.path.isfile(f):
-                    os.rm(f)
+                p = os.path.join(self.temp_dir, f)
+                if os.path.isfile(p):
+                    os.remove(p)
                 else:
-                    shutil.rmtree(i)
+                    shutil.rmtree(p)
         else:
             os.mkdir(self.temp_dir)
 
