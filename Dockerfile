@@ -13,6 +13,7 @@ RUN python3 -m pip install --upgrade pip
 WORKDIR /root
 RUN git clone https://github.com/sipeed/maix_train.git
 WORKDIR /root/maix_train
+COPY __init__.py train/
 RUN pip3 install -r requirements.txt
 
 RUN apt install -y curl
@@ -24,5 +25,4 @@ RUN tar Jxfv ncc-linux-x86_64.tar.xz
 RUN rm ncc-linux-x86_64.tar.xz
 
 WORKDIR /root/maix_train
-COPY __init__.py train/
 RUN python3 train.py init
